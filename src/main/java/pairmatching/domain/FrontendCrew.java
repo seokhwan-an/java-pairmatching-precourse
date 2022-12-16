@@ -12,7 +12,7 @@ public class FrontendCrew {
     private static final String FILE = "src/main/resources/frontend-crew.md";
     private List<String> crew;
 
-    public void createCrewList() {
+    public List<String> createCrewList() {
         File crewNames = new File(FILE);
         try {
             BufferedReader br = new BufferedReader(new FileReader(crewNames));
@@ -25,6 +25,7 @@ public class FrontendCrew {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return crew;
     }
 
 }
